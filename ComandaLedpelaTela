@@ -1,0 +1,31 @@
+//Este programa liga/desliga um led ligado à saída digital 31 através de comando dado na tela "L" para ligar e "D" para desligar
+
+int LED =  31;
+
+void setup()   
+{
+ Serial.begin(9600);
+ pinMode(LED, OUTPUT);
+ Serial.println ("Digite L para ligar o LED ou Digite D para desligar o LED");
+}
+ 
+void loop()
+{ 
+ char tecla;
+ tecla = Serial.read();
+  
+  if(tecla == 'L')
+  {
+      digitalWrite(LED, HIGH);
+      Serial.println ("LED LIGADO");
+  }
+ 
+    if(tecla == 'D')
+ 
+    {
+        digitalWrite(LED, LOW);
+        Serial.println ("LED DESLIGADO");
+    }
+ 
+  delay(200);
+}
